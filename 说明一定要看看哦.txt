@@ -1,0 +1,165 @@
+部署环境需求
+php版本7.4
+mysql版本大于5.6
+
+开发版本需求
+vue版本 2
+php随意
+vant 2.12.25
+其他在package.json中可查看
+
+声明：只做了简单过滤，注意数据安全，如需使用注意数据备份哦
+写的太菜，容易被大佬锤
+
+本网站设计参考平兄的表白网站，非原创
+
+
+
+放在服务器上的文件树为
+.
+|-- 404.html
+|-- api
+|   |-- php
+|   |   |-- action.php
+|   |   |-- comment.php
+|   |   |-- config.php
+|   |   |-- connect.php
+|   |   |-- display.php
+|   |   |-- email.php
+|   |   |-- like.php
+|   |   |-- PHPMailer
+|   |   |   |-- changelog.md
+|   |   |   |-- class.phpmaileroauthgoogle.php
+|   |   |   |-- class.phpmaileroauth.php
+|   |   |   |-- class.phpmailer.php
+|   |   |   |-- class.pop3.php
+|   |   |   |-- class.smtp.php
+|   |   |   |-- composer.json
+|   |   |   |-- composer.lock
+|   |   |   |-- docs
+|   |   |   |   |-- Callback_function_notes.txt
+|   |   |   |   |-- DomainKeys_notes.txt
+|   |   |   |   |-- extending.html
+|   |   |   |   |-- faq.html
+|   |   |   |   |-- generatedocs.sh
+|   |   |   |   |-- Note_for_SMTP_debugging.txt
+|   |   |   |   `-- pop3_article.txt
+|   |   |   |-- extras
+|   |   |   |   |-- EasyPeasyICS.php
+|   |   |   |   |-- htmlfilter.php
+|   |   |   |   |-- ntlm_sasl_client.php
+|   |   |   |   `-- README.md
+|   |   |   |-- get_oauth_token.php
+|   |   |   |-- language
+|   |   |   |   |-- phpmailer.lang-am.php
+|   |   |   |   |-- phpmailer.lang-ar.php
+|   |   |   |   |-- phpmailer.lang-az.php
+|   |   |   |   |-- phpmailer.lang-be.php
+|   |   |   |   |-- phpmailer.lang-bg.php
+|   |   |   |   |-- phpmailer.lang-br.php
+|   |   |   |   |-- phpmailer.lang-ca.php
+|   |   |   |   |-- phpmailer.lang-ch.php
+|   |   |   |   |-- phpmailer.lang-cz.php
+|   |   |   |   |-- phpmailer.lang-de.php
+|   |   |   |   |-- phpmailer.lang-dk.php
+|   |   |   |   |-- phpmailer.lang-el.php
+|   |   |   |   |-- phpmailer.lang-eo.php
+|   |   |   |   |-- phpmailer.lang-es.php
+|   |   |   |   |-- phpmailer.lang-et.php
+|   |   |   |   |-- phpmailer.lang-fa.php
+|   |   |   |   |-- phpmailer.lang-fi.php
+|   |   |   |   |-- phpmailer.lang-fo.php
+|   |   |   |   |-- phpmailer.lang-fr.php
+|   |   |   |   |-- phpmailer.lang-gl.php
+|   |   |   |   |-- phpmailer.lang-he.php
+|   |   |   |   |-- phpmailer.lang-hr.php
+|   |   |   |   |-- phpmailer.lang-hu.php
+|   |   |   |   |-- phpmailer.lang-id.php
+|   |   |   |   |-- phpmailer.lang-it.php
+|   |   |   |   |-- phpmailer.lang-ja.php
+|   |   |   |   |-- phpmailer.lang-ka.php
+|   |   |   |   |-- phpmailer.lang-ko.php
+|   |   |   |   |-- phpmailer.lang-lt.php
+|   |   |   |   |-- phpmailer.lang-lv.php
+|   |   |   |   |-- phpmailer.lang-ms.php
+|   |   |   |   |-- phpmailer.lang-nl.php
+|   |   |   |   |-- phpmailer.lang-no.php
+|   |   |   |   |-- phpmailer.lang-pl.php
+|   |   |   |   |-- phpmailer.lang-pt.php
+|   |   |   |   |-- phpmailer.lang-ro.php
+|   |   |   |   |-- phpmailer.lang-ru.php
+|   |   |   |   |-- phpmailer.lang-se.php
+|   |   |   |   |-- phpmailer.lang-sk.php
+|   |   |   |   |-- phpmailer.lang-sl.php
+|   |   |   |   |-- phpmailer.lang-sr.php
+|   |   |   |   |-- phpmailer.lang-tr.php
+|   |   |   |   |-- phpmailer.lang-uk.php
+|   |   |   |   |-- phpmailer.lang-vi.php
+|   |   |   |   |-- phpmailer.lang-zh_cn.php
+|   |   |   |   `-- phpmailer.lang-zh.php
+|   |   |   |-- LICENSE
+|   |   |   |-- PHPMailerAutoload.php
+|   |   |   |-- README.md
+|   |   |   |-- test
+|   |   |   |   |-- bootstrap.php
+|   |   |   |   |-- fakepopserver.sh
+|   |   |   |   |-- fakesendmail.sh
+|   |   |   |   |-- phpmailerLangTest.php
+|   |   |   |   |-- phpmailerTest.php
+|   |   |   |   |-- runfakepopserver.sh
+|   |   |   |   |-- testbootstrap-dist.php
+|   |   |   |   `-- test_callback.php
+|   |   |   |-- travis.phpunit.xml.dist
+|   |   |   `-- VERSION
+|   |   |-- say.php
+|   |   `-- upload.php
+|   `-- upload
+|       |-- 2021081137.png
+|       |-- 2021081147.png
+|       |-- 2021081321.jpeg
+|       |-- 2021081356.jpeg
+|       |-- 2021081380.jpeg
+|       |-- 2021081396.jpeg
+|       |-- 2021081410.jpeg
+|       |-- 2021081458.jpeg
+|       |-- 2021081485.jpeg
+|       |-- 2021081849.jpeg
+|       |-- 2021081851.jpeg
+|       |-- 2021081863.jpeg
+|       |-- 2021081870.png
+|       |-- 2021081912.jpeg
+|       `-- cesiiamge.jpg
+|-- css
+|   |-- app.381355c1.css
+|   |-- app.84eb3fcd.css
+|   |-- app.e0c7e18c.css
+|   |-- app.e912ce0e.css
+|   `-- chunk-vendors.ac21c312.css
+|-- favicon.ico
+|-- index.html
+|-- js
+|   |-- app.220b3945.js
+|   |-- app.220b3945.js.map
+|   |-- app.34d72c54.js
+|   |-- app.34d72c54.js.map
+|   |-- app.895ebf86.js
+|   |-- app.895ebf86.js.map
+|   |-- app.adaee53a.js
+|   |-- app.adaee53a.js.map
+|   |-- chunk-vendors.351880db.js
+|   |-- chunk-vendors.351880db.js.map
+|   |-- chunk-vendors.3ab8618f.js
+|   `-- chunk-vendors.3ab8618f.js.map
+`-- saylove.sql
+
+10 directories, 124 files
+
+报错相关问题：
+显示找不到图片文件
+需要更改api下的php文件内的upload地址的拼接 、、这是一个坑有大佬自行修复哦， 
+其他问题，
+1.检测数据库链接是否正常
+2.检测php是否正常
+3.apche是否正常
+4.加油源码随便该，！
+5.脚手架是4.15版本
